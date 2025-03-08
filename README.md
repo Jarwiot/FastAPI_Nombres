@@ -1,4 +1,4 @@
-Se pidio crear una API sensilla en la que almacena 3 nombres en una cadena ("juan","maria","pedro") para levantar la pagina se uso Github pages y para levantar la API se uso Render 
+Se pidio crear una API sensilla mediante el uso de la biblioteca FastAPI de python y Uvicorn para levantar el servicio.la practica es  despleguar una pagina y una API en la que almacena 3 nombres en una cadena ("juan","maria","pedro") para levantar la pagina se uso Github pages y para levantar la API se uso Render 
 ya que Github no puede desplegar estas perse
 
 resultado logrado
