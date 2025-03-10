@@ -10,18 +10,23 @@
     <ul id="lista-nombres"></ul>
 
     <script>
-        // Llamar a la API y mostrar los nombres
-        fetch("http://127.0.0.1:8000/nombres")  // 🔹 1. Hace la petición a la API
-            .then(response => response.json())  // 🔹 2. Convierte la respuesta a JSON
-            .then(data => {  // 🔹 3. Procesa los datos obtenidos
-                const lista = document.getElementById("lista-nombres"); // 🔹 4. Obtiene la lista <ul>
-                data.nombres.forEach(nombre => {  // 🔹 5. Recorre cada nombre recibido
-                    let li = document.createElement("li"); // 🔹 6. Crea un nuevo <li>
-                    li.textContent = nombre; // 🔹 7. Asigna el nombre al <li>
-                    lista.appendChild(li); // 🔹 8. Agrega el <li> a la lista <ul>
+        async function cargarNombres() {
+            try {
+                let respuesta = await fetch("https://tu-api.onrender.com/nombres");
+                let nombres = await respuesta.json();
+
+                let lista = document.getElementById("lista-nombres");
+                nombres.forEach(nombre => {
+                    let li = document.createElement("li");
+                    li.textContent = nombre;
+                    lista.appendChild(li);
                 });
-            })
-            .catch(error => console.error("Error al obtener nombres:", error)); // 🔹 9. Maneja errores
+            } catch (error) {
+                console.error("Error al obtener los nombres:", error);
+            }
+        }
+
+        cargarNombres();
     </script>
 </body>
 </html>
