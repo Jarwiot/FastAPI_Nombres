@@ -12,7 +12,7 @@
     <script>
         async function cargarNombres() {
             try {
-                let respuesta = await fetch("https://tu-api.onrender.com/nombres");
+                let respuesta = await fetch("/nombres"); // Se accede directamente en el mismo dominio
                 let nombres = await respuesta.json();
 
                 let lista = document.getElementById("lista-nombres");
